@@ -2,6 +2,7 @@ def merge_sort(A):
     if len(A) < 2:
         return A
     else:
+        print('Splitting', A)
         mid = len(A) // 2
         left_part = A[:mid]
         right_part = A[mid:]
@@ -27,3 +28,10 @@ def merge_sort(A):
             A[k] = right_part[j]
             j += 1
             k += 1
+    print('Merging', A)
+
+if __name__ == '__main__':
+    A = [n for n in range(100, 0, -1)]
+    merge_sort(A)
+    for i in A:
+        print(i)
