@@ -4,9 +4,9 @@ class Empty(Exception):
 class LinkedStack:
     """Stack implementation using a singly linked list."""
     class _Node:
-        __slots__ = '_elemment', '_next'
+        __slots__ = '_element', '_next'
         def __init__(self, element, next):
-            self._elemment = element
+            self._element = element
             self._next = next
     def __init__(self):
         self._head = None
