@@ -6,3 +6,6 @@ def insertion_sort(A):
             A[j] = A[j-1]
             j -= 1
         A[j] = cur
+
+if __name__ == '__main__':
+    pass
