@@ -7,6 +7,6 @@ def enumerate(data):
         i += 1
 
 if __name__ == '__main__':
-    A = ['allen', 'lucas', 'bob', 'finch', 'susan']
+    A = ['allen', 'lucas', 'bob', 'finch', 'susan', 'finch']
     for i, j in enumerate(A):
         print(i, j)
