@@ -25,6 +25,7 @@ def f_iterative(data, target):
 
 if __name__ == '__main__':
     data = [n for n in range(101)]
+    print(data)
     target = 23
     print(f_recursion(data, target, 0, 100))
     print(f_iterative(data, target))
