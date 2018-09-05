@@ -22,7 +22,7 @@ def quick_sort_optimize(A):
                 equal.append(x)
             if x > pivot:
                 greater.append(x)
-        return sort(less) + equal + sort(greater)  
+        return quick_sort_optimiz(less) + equal + quick_sort_optimiz(greater)  
     else:  
         return A
 
