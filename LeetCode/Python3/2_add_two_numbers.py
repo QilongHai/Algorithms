@@ -3,7 +3,7 @@ class ListNode:
         self.val = x
         self.next = None
 
-def add_two_nnumbers(l1, l2):
+def add_two_numbers(l1, l2):
     ret = ListNode(0)
     temp = ret
     carry = 0
@@ -21,4 +21,3 @@ def add_two_nnumbers(l1, l2):
         temp = temp.next
     return ret.next
 
-    pass
