@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "power", "power\power.vcproj", "{D69E35BA-2317-4AF7-B2BE-808E492078AF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stack", "stack\stack.vcproj", "{9CD749B2-2747-4DB2-9272-1B698EF9224A}"
@@ -9,9 +11,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sum", "sum\sum.vcproj", "{F
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vector", "vector\vector.vcproj", "{AA0C1F4D-15AA-401F-A8A3-D5CF592DF35E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nest_recursive", "nest_recursive\paren_recursive.vcproj", "{EB1BC5BD-0926-4530-9CB9-195201654C8D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paren_recursive", "nest_recursive\paren_recursive.vcproj", "{EB1BC5BD-0926-4530-9CB9-195201654C8D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nest_stack", "nest_stack\paren_stack.vcproj", "{36CC4CA5-DEDB-4DF1-A581-2F13810EAE79}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "paren_stack", "nest_stack\paren_stack.vcproj", "{36CC4CA5-DEDB-4DF1-A581-2F13810EAE79}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queen_brute_force_2", "queen_brute_force_2\queen_brute_force_2.vcproj", "{51CCC893-202C-4F56-942D-4BE73970120C}"
 EndProject
@@ -23,7 +25,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queen_stack", "queen_stack\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "queue", "queue\queue.vcproj", "{8C20B3E0-2E5A-4B8D-88C1-BABCB71C9D98}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinTree", "binTree\binTree.vcproj", "{6FB49C32-97BD-43CE-997B-D86178877C80}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "binTree", "binTree\binTree.vcproj", "{6FB49C32-97BD-43CE-997B-D86178877C80}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "skiplist", "skiplist\skiplist.vcproj", "{F55FC458-1860-4E60-A4BB-182EFDBE82C7}"
 EndProject
@@ -43,7 +45,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hashtable", "hashtable\hash
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RedBlack", "redBlack\RedBlack.vcproj", "{37F1CFAE-77E5-4B02-8709-9902F79DCAC7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PQ_ComplHeap", "PQ_ComplHeap\PQ_BinHeap.vcproj", "{52374F30-FFF3-4398-BC26-89629B608A48}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PQ_BinHeap", "PQ_ComplHeap\PQ_BinHeap.vcproj", "{52374F30-FFF3-4398-BC26-89629B608A48}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Huffman_PQ_ComplHeap", "Huffman_PQ_ComplHeap\Huffman_PQ_ComplHeap.vcproj", "{AD075C14-B4B1-413C-BB0C-DFDA7112D845}"
 EndProject
@@ -109,7 +111,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shiftK", "shiftK\shiftK.vcp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "list", "list\list.vcproj", "{6C4EDF7C-A231-4F36-BECC-906CCBB8E566}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bitmap", "BitMap\bitmap.vcproj", "{B01CD722-EF4C-40BC-B327-377AD027240A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bitmap", "BitMap\bitmap.vcproj", "{B01CD722-EF4C-40BC-B327-377AD027240A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bitmap_set_only", "Bitmap_set_only\Bitmap_set_only.vcproj", "{CF2F7E4E-9057-4A1A-894F-18B9B796D4F0}"
 EndProject
@@ -352,5 +354,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65A2AC8A-695B-429F-8ADF-4223CE48E815}
 	EndGlobalSection
 EndGlobal
