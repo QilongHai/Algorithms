@@ -1,4 +1,4 @@
-def enumerate(data):
+def enumerate_(data):
     '''Generates an indexed series:  (0,coll[0]), (1,coll[1]) ...'''
     i = 0
     it = iter(data)
@@ -8,5 +8,5 @@ def enumerate(data):
 
 if __name__ == '__main__':
     A = ['allen', 'lucas', 'bob', 'finch', 'susan', 'finch']
-    for i, j in enumerate(A):
+    for i, j in enumerate_(A):
         print(i, j)

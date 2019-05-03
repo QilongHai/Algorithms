@@ -21,7 +21,7 @@ int binarySearch(int A[], int low, int high, int key){
 }
 
 
-int main(void){
+int main(){
     int A[] = {2, 3, 4, 10, 11, 15, 19, 22, 27, 30};
     int key = 10;
     int low = 0;
