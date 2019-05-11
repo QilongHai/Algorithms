@@ -50,13 +50,13 @@ int fib_3(int n)
 
 int main()
 {
-    int n = 9;
+    int n = 30;
     cout << "fib_1: " << n << " is " << fib_1(n) << endl;
 
-    int m = 9;
+    int m = 30;
     cout << "fib_2: " << m << " is " << fib_2(m) << endl;
 
-    int p = 9;
+    int p = 30;
     cout << "fib_3: " << p << " is " << fib_3(p) << endl;
 
     return 0;
