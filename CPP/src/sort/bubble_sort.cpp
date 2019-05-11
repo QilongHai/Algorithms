@@ -13,3 +13,12 @@ void bubble_sort(int A[], int n)
                 sorted = false;
             }
 }
+
+int main()
+{
+    int A[] = {2, 1, 13, 4, 22, 15, 9};
+    int n = sizeof(A) / sizeof(A[0]);
+    bubble_sort(A, n);
+    for (int i=0; i<n; i++)
+        cout << A[i] << endl;
+}
