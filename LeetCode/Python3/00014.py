@@ -41,5 +41,7 @@ if __name__ == "__main__":
     for i in ans:
         if i in res:
             pass
+        else:
+            assert i in res == i in ans, 'case {} miss match'.format(i)
     assert len(ans) == len(res), 'test case match'
     print('Test success')
