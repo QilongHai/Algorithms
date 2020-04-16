@@ -8,18 +8,13 @@ class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         root = ListNode(-1)
         root.next = head
-        left_node = root
-        right_node = root
+        slow = root
+        fast = root
         while n > 0:
-            right_node = right_node.next
+            fast = fast.next
             n -= 1
-        while right_node.next:
-            right_node = right_node.next
-            left_node = left_node.next
-
-        left_node.next = left_node.next.next
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
         return root.next
-
-
-
-
