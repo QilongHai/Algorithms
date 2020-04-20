@@ -10,9 +10,8 @@ class Solution:
                 d[temp] = [s]
             else:
                 d[temp].append(s)
-        res = []
-        for i in d.values():
-            res.append(i)
+        res = [v for v in d.values()]
+        
         return res
 
 
