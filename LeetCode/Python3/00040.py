@@ -11,13 +11,12 @@ class Solution:
                 cur_val = target - candidates[idx]
                 if cur_val < 0:
                     break
-                if idx > begin and candidates[idx] == candidates[idx-1]:
+                if idx > begin and candidates[idx] == candidates[idx - 1]:
                     continue
                 path.append(candidates[idx])
-                dfs(candidates, idx+1, size, path, res, cur_val)
+                dfs(candidates, idx + 1, size, path, res, cur_val)
                 path.pop()
-            
-        
+
         size = len(candidates)
         if size == 0:
             return []

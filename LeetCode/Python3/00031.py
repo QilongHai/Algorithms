@@ -11,8 +11,8 @@ class Solution:
             return
         p = -1
         q = 0
-        for i in range(n-1):
-            if nums[i] < nums[i+1]:
+        for i in range(n - 1):
+            if nums[i] < nums[i + 1]:
                 p = i
             if p != -1 and nums[i] > nums[p]:
                 q = i
@@ -22,7 +22,4 @@ class Solution:
             nums[:] = nums[::-1]
         else:
             nums[p], nums[q] = nums[q], nums[p]
-            nums[:] = nums[:p+1] + nums[n-1:p:-1]
-
-
-
+            nums[:] = nums[:p + 1] + nums[n - 1:p:-1]

@@ -12,6 +12,7 @@ class Solution:
             if j != i and j is not None:
                 return [i, j]
 
+
 if __name__ == '__main__':
     s = Solution()
     ans = s.twoSum([2, 7, 11, 15], 9)

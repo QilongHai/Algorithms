@@ -13,7 +13,7 @@ class Solution:
 
         for i in range(n):
             matrix[i].reverse()
-            
+
     def rotate_2(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
@@ -21,14 +21,15 @@ class Solution:
         n = len(matrix)
         matrix[:] = matrix[::-1]
         for i in range(0, n):
-            for j in range(i+1, n):
+            for j in range(i + 1, n):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
 
 s = Solution()
 matrix = [
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
 ]
 a = [
     [7, 8, 9],
@@ -36,9 +37,9 @@ a = [
     [1, 2, 3]
 ]
 c = [
-  [7,4,1],
-  [8,5,2],
-  [9,6,3]
+    [7, 4, 1],
+    [8, 5, 2],
+    [9, 6, 3]
 ]
 s.rotate_2(matrix)
 # print(matrix)

@@ -9,5 +9,5 @@ class Solution:
                 res.append([x, y])
             else:
                 res[-1][1] = max(y, res[-1][1])
-        
+
         return res

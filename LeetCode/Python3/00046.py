@@ -8,8 +8,8 @@ class Solution:
                 res.append(tmp_list)
                 return
             for i in range(len(nums)):
-                backtrack(nums[:i]+nums[i+1:], tmp_list+[nums[i]])
-        
+                backtrack(nums[:i] + nums[i + 1:], tmp_list + [nums[i]])
+
         if not nums:
             return []
         res = []
@@ -45,4 +45,3 @@ class Solution:
 s = Solution()
 nums = [1, 2, 3]
 print(nums[:])
-

@@ -11,7 +11,7 @@ class Solution:
             else:
                 d[temp].append(s)
         res = [v for v in d.values()]
-        
+
         return res
 
 

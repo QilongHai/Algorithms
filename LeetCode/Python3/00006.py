@@ -9,7 +9,7 @@ class Solution:
         index = 0
         for char in string:
             res[index] += char
-            if index in [0, num_rows-1]:
+            if index in [0, num_rows - 1]:
                 flag = -flag
             index += flag
         return ''.join(res)

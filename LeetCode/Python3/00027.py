@@ -13,4 +13,3 @@ class Solution:
                 nums[new_index] = num
                 new_index += 1
         return new_index
-

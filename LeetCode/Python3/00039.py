@@ -17,7 +17,7 @@ class Solution:
 
         size = len(candidates)
         if size == 0:
-            return []        
+            return []
         candidates.sort()
         path = []
         res = []
