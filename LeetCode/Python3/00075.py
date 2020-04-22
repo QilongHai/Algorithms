@@ -23,7 +23,6 @@ class Solution:
             nums[j] = 1
         for k in range(len(nums) - white, len(nums)):
             nums[k] = 2
-        # return nums
 
     @staticmethod
     def swap(nums, i, j):
@@ -33,19 +32,19 @@ class Solution:
         size = len(nums)
         if size < 2:
             return
-        zero = 0
-        two = size
-        i = 0
-        while i < two:
-            if nums[i] == 0:
-                self.swap(nums, i, zero)
-                i += 1
-                zero += 1
-            elif nums[i] == 1:
-                i += 1
+        red = 0
+        blue = size
+        idx = 0
+        while idx < blue:
+            if nums[idx] == 0:
+                self.swap(nums, idx, red)
+                idx += 1
+                red += 1
+            elif nums[idx] == 1:
+                idx += 1
             else:
-                two -= 1
-                self.swap(nums, i, two)
+                blue -= 1
+                self.swap(nums, idx, blue)
 
 
 if __name__ == '__main__':
