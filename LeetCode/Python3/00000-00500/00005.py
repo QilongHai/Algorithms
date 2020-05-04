@@ -9,10 +9,8 @@ class Solution:
             return s
 
         dp = [[False for _ in range(size)] for _ in range(size)]
-
         max_len = 1
         start = 0
-
         for i in range(size):
             dp[i][i] = True
 
