@@ -16,3 +16,14 @@ class Solution:
             second = res
 
         return max(n, res)  # 返回n和res中较大的那个
+
+    def dp_method(self, n: int) -> int:
+        if n == 1:
+            return 1
+        dp = [0 for _ in range(n + 1)]  # dp[i]表示爬到第i阶的方法数
+        dp[0] = 0
+        dp[1] = 1
+        dp[2] = 2
+        for i in range(3, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+        return dp[-1]  # or return dp[n]
