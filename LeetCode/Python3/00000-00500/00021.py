@@ -6,7 +6,7 @@ class ListNode:
 
 
 class Solution:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def mergeTwoLists_1(self, l1: ListNode, l2: ListNode) -> ListNode:
         if l1 is None:
             return l2
         elif l2 is None:
@@ -18,9 +18,7 @@ class Solution:
             l2.next = self.mergeTwoLists(l1, l2.next)
             return l2
 
-
-class SolutionTwo:
-    def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+    def mergeTwoLists_2(self, l1: ListNode, l2: ListNode) -> ListNode:
         pre_head = ListNode(-1)
         prev = pre_head
         while l1 and l2:
@@ -36,3 +34,26 @@ class SolutionTwo:
         if l2:
             prev.next = l2
         return pre_head.next
+
+    def mergeTwoLists_3(self, l1: ListNode, l2: ListNode) -> ListNode:
+        if not l1 and l2:
+            return l2
+        if l1 and not l2:
+            return l1
+        if not l1 and not l2:
+            return None
+        pre = ListNode(-1)
+        dummy = pre
+        while l1 and l2:
+            if l1.val < l2.val:
+                pre.next = ListNode(l1.val)
+                l1 = l1.next if l1.next else None
+            else:
+                pre.next = ListNode(l2.val)
+                l2 = l2.next if l2.next else None
+            pre = pre.next
+        if l1:
+            pre.next = l1
+        if l2:
+            pre.next = l2
+        return dummy.next
