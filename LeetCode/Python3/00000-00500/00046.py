@@ -53,11 +53,9 @@ class SolutionThree:
                 if not used[i]:
                     used[i] = True
                     path.append(nums[i])
-                    backtrack(depth+1, path)
+                    backtrack(depth + 1, path)
                     path.pop()
                     used[i] = False
 
         backtrack(0, [])
         return res
-
-
