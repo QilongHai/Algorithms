@@ -17,31 +17,47 @@ class Solution:
         return res
 
 
-# class Solution:
-#     def permute(self, nums: List[int]) -> List[List[int]]:
+class SolutionTwo:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        res = []
+        hash_set = set()
 
-#         def dfs(nums, size, depth, hash_set, path, res):
-#             if depth == size:
-#                 res.append(path[:])
-#                 return
-#             for i in range(size):
-#                 if nums[i] not in hash_set:
-#                     hash_set.add(nums[i])
-#                     path.append(nums[i])
-#                     dfs(nums, size, depth+1, hash_set, path, res)
-#                     path.pop()
-#                     hash_set.remove(nums[i])
+        def backtrack(depth, path):
+            if depth == n:
+                res.append(path[:])
+                return
+            for i in range(n):
+                if nums[i] not in hash_set:
+                    hash_set.add(nums[i])
+                    path.append(nums[i])
+                    backtrack(depth + 1, path)
+                    path.pop()
+                    hash_set.remove(nums[i])
 
-#         size = len(nums)
-#         if size == 0:
-#             return []
-#         path = []
-#         res = []
-#         hash_set = set()
-#         dfs(nums, size, 0, hash_set, path, res)
-#         return res
+        backtrack(0, [])
+        return res
 
 
-s = Solution()
-nums = [1, 2, 3]
-print(nums[:])
+class SolutionThree:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        res = []
+        used = [False for _ in range(n)]
+
+        def backtrack(depth, path):
+            if depth == n:
+                res.append(path[:])
+                return
+            for i in range(n):
+                if not used[i]:
+                    used[i] = True
+                    path.append(nums[i])
+                    backtrack(depth+1, path)
+                    path.pop()
+                    used[i] = False
+
+        backtrack(0, [])
+        return res
+
+
