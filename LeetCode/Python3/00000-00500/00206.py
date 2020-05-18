@@ -25,3 +25,19 @@ class Solution:
         head.next.next = head
         head.next = None
         return p
+
+
+if __name__ == '__main__':
+    head = ListNode(1)
+    dummy = head
+    for i in range(2, 10):
+        dummy.next = ListNode(i)
+        dummy = dummy.next
+
+    solution = Solution()
+    tail = solution.reverseListIter(head)
+    res = []
+    while tail:
+        res.append(tail.val)
+        tail = tail.next
+    print(res)
