@@ -12,14 +12,14 @@ class Solution:
              '8': ['t', 'u', 'v'],
              '9': ['w', 'x', 'y', 'z']}
 
-        def backtrack(combination, next_digits):
+        def dfs(cur_str, next_digits):
             if len(next_digits) == 0:
-                res.append(combination)
+                res.append(cur_str)
             else:
                 for char in d[next_digits[0]]:
-                    backtrack(combination + char, next_digits[1:])
+                    dfs(cur_str + char, next_digits[1:])
 
         res = []
         if digits:
-            backtrack('', digits)
+            dfs('', digits)
         return res
