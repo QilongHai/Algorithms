@@ -52,6 +52,26 @@ class SolutionTwo:
         return res
 
 
+class SolutionThree:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        def area(i, j):
+            if i < 0 or i >= rows:
+                return 0
+            if j < 0 or j >= cols:
+                return 0
+            if grid[i][j] != 1:
+                return 0
+            grid[i][j] = 2
+            return 1 + area(i-1, j) + area(i+1, j) + area(i, j-1) + area(i, j+1)
 
-
-
+        if not grid:
+            return 0
+        rows = len(grid)
+        cols = len(grid[0])
+        res = 0
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == 1:
+                    cur_area = area(i, j)
+                    res = max(res, cur_area)
+        return res
