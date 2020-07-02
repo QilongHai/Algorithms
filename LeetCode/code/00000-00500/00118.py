@@ -13,3 +13,17 @@ class Solution:
             res.append(row)
 
         return res
+
+
+class SolutionTwo:
+    """
+    ref: https://leetcode-cn.com/problems/pascals-triangle/solution/qu-qiao-jie-fa-cuo-yi-wei-zai-zhu-ge-xiang-jia-28m/
+    """
+    def generate(self, numRows: int) -> List[List[int]]:
+        if numRows == 0:
+            return []
+        res = [[1]]
+        while len(res) < numRows:
+            row = [x + y for x, y in zip([0] + res[-1], res[-1] + [0])]
+            res.append(row)
+        return res
