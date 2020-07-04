@@ -3,55 +3,25 @@ from typing import List
 
 class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        """
-        n = len(nums)
-        if n <= 1:
-            return
+        n = len(nums) - 1
         p = -1
-        q = 0
-        for i in range(n - 1):
+        p_val = 0
+        for i in range(n - 1, -1, 0):
             if nums[i] < nums[i + 1]:
                 p = i
-            if p != -1 and nums[i] > nums[p]:
-                q = i
-        if p != -1 and nums[-1] > nums[p]:
-            q = n - 1
+                p_val = nums[i]
+                break
         if p == -1:
-            nums[:] = nums[::-1]
-        else:
-            nums[p], nums[q] = nums[q], nums[p]
-            nums[:] = nums[:p + 1] + nums[n - 1:p:-1]
-
-
-class SolutionTwo:
-    def nextPermutation(self, nums: List[int]) -> None:
-        """
-        Do not return anything, modify nums in-place instead.
-        1. 从后向前查找第一个相邻升序的元素对 (i,j)，满足 A[i] < A[j]。此时 [j,end) 必然是降序
-        2. 在 [j,end) 从后向前查找第一个满足 A[i] < A[k] 的 k。A[i]、A[k] 分别就是上文所说的「小数」、「大数」
-        3. 将 A[i] 与 A[k] 交换
-        4. 可以断定这时 [j,end) 必然是降序，逆置 [j,end)，使其升序
-        5. 如果在步骤 1 找不到符合的相邻元素对，说明当前 [begin,end) 为一个降序顺序，则直接跳到步骤 4
-        """
-        if len(nums) <= 1:
+            self.my_reverse(nums, 0, n)
             return
-        i = len(nums) - 2
-        j = len(nums) - 1
-        k = len(nums) - 1
+        for j in range(n, -1, -1):
+            if nums[j] > p_val:
+                nums[j], nums[p] = nums[p], nums[j]
+                break
+        self.my_reverse(nums, p + 1, n)
 
-        # find nums[i] < nums[j]
-        while i >= 0 and nums[i] >= nums[j]:
-            i -= 1
+    def my_reverse(self, nums, i, j):
+        while i < j:
+            nums[i], nums[j] = nums[j], nums[i]
+            i += 1
             j -= 1
-        if i >= 0:
-            while nums[i] >= nums[k]:
-                k -= 1
-            nums[i], nums[k] = nums[k], nums[i]
-        m = j
-        n = len(nums) - 1
-        while m < n:
-            nums[m], nums[n] = nums[n], nums[m]
-            m += 1
-            n -= 1
