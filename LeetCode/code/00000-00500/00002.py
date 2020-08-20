@@ -5,6 +5,8 @@ class ListNode:
 
 
 class Solution:
+    """"iter solution"""
+
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         pre = ListNode(-1)
         cur = pre
@@ -18,3 +20,24 @@ class Solution:
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return pre.next
+
+
+class SolutionTwo:
+    """"recursion solution"""
+
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        return self.helper(l1, l2, 0)
+
+    def helper(self, l1: ListNode, l2: ListNode, carry: int) -> ListNode:
+        if not l1 and not l2 and carry == 0:
+            return None
+        if l1:
+            carry += l1.val
+            l1 = l1.next
+        if l2:
+            carry += l2.val
+            l2 = l2.next
+        node = ListNode(carry % 10)
+        carry //= 10
+        node.next = self.helper(l1, l2, carry)
+        return node
