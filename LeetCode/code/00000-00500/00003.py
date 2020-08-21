@@ -56,8 +56,6 @@ class SolutionThree:
         return res
 
 
-
-
 if __name__ == '__main__':
     input_list = ["abcabcbb", "bbbbb", "pwwkew"]
     solution_obj = SolutionTwo()
