@@ -36,6 +36,28 @@ class SolutionTwo:
         return ans
 
 
+class SolutionThree:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        n = len(s)
+        start, end = 0, 0
+        length = 0
+        res = 0
+        seen = dict()
+        while end < n:
+            cur_str = s[end]
+            if cur_str in seen and seen[cur_str] >= start:
+                start = seen[cur_str] + 1
+                length = end - start
+            seen[cur_str] = end
+            end += 1
+            length += 1
+            if length > res:
+                res = length
+        return res
+
+
+
+
 if __name__ == '__main__':
     input_list = ["abcabcbb", "bbbbb", "pwwkew"]
     solution_obj = SolutionTwo()
