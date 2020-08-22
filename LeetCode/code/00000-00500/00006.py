@@ -1,17 +1,17 @@
 class Solution:
-    def convert(self, string: str, num_rows: int) -> str:
-        if not string:
+    def convert(self, s: str, num_rows: int) -> str:
+        if not s:
             return ''
         if num_rows == 1:
-            return string
-        res = ['' for _ in range(num_rows)]
-        flag = -1
-        index = 0
-        for char in string:
-            res[index] += char
-            if index in [0, num_rows - 1]:
-                flag = -flag
-            index += flag
+            return s
+        res = [''] * num_rows
+        cur_row = 0
+        down = -1
+        for char in s:
+            res[cur_row] += char
+            if cur_row == 0 or cur_row == num_rows - 1:
+                down = -down
+            cur_row += down
         return ''.join(res)
 
 

@@ -3,14 +3,13 @@ class Solution:
         if -10 < x < 10:
             return x
         sign = 1 if x > 0 else -1
-        limit_int = pow(2, 31) - 1 if sign == 1 else -pow(2, 31)
         x = abs(x)
         res = 0
         while x:
             res = res * 10 + x % 10
             x //= 10
-        ans = sign * res
-        if sign == 1:
-            return ans if ans < limit_int else 0
+        res *= sign
+        if -pow(2, 31) <= res <= pow(2, 31) - 1:
+            return res
         else:
-            return ans if ans > limit_int else 0
+            return 0
