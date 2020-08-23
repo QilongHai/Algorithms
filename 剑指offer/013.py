@@ -36,3 +36,36 @@ class Solution:
             res += y % 10
             y //= 10
         return res
+
+
+class SolutionTwo:
+
+    def __init__(self):
+        self.count = 0
+
+    def movingCount(self, m: int, n: int, k: int) -> int:
+        def is_valid(x, y):
+            res = 0
+            for i in [x, y]:
+                while i:
+                    res += i % 10
+                    i //= 10
+            return True if res <= k else False
+
+        def dfs(i, j):
+            if i < 0 or i >= m or j < 0 or j >= n:
+                return False
+            if not is_valid(i, j):
+                return False
+            if board[i][j] == 1:
+                return False
+            board[i][j] = 1
+            self.count += 1
+            dfs(i + 1, j)
+            dfs(i, j - 1)
+            dfs(i, j + 1)
+            dfs(i - 1, j)
+
+        board = [[0 for _ in range(n)] for _ in range(m)]
+        dfs(0, 0)
+        return self.count

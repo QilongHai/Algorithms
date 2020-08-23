@@ -11,3 +11,16 @@ class Solution:
                 else:
                     return val
         return -1
+
+
+class SolutionTwo:
+    def findRepeatNumber(self, nums: List[int]) -> int:
+        for idx, num in enumerate(nums):
+            if idx == num:
+                continue
+            else:
+                if num == nums[num]:
+                    return num
+                else:
+                    nums[idx], nums[num] = nums[num], nums[idx]
+        return -1
